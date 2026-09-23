@@ -3,10 +3,90 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#152921" />
-    <title>LeadPilot 线索运营台</title>
-    <script type="module" crossorigin src="/assets/index-CC346B5m.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-i3-gqERz.css">
+    <meta name="description" content="张峻豪｜Java 后端与 AI 应用开发简历" />
+    <title>张峻豪｜Java 后端 · AI 应用开发</title>
+    <style>
+      :root {
+        color-scheme: light;
+        font-family: Inter, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+        background: #eef2f7;
+        color: #162033;
+      }
+      * { box-sizing: border-box; }
+      body { margin: 0; min-height: 100vh; }
+      header {
+        min-height: 74px;
+        padding: 14px clamp(18px, 4vw, 52px);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        background: rgba(255, 255, 255, .96);
+        border-bottom: 1px solid #dde4ee;
+        box-shadow: 0 8px 30px rgba(31, 48, 78, .06);
+      }
+      .identity { display: flex; flex-direction: column; gap: 4px; }
+      h1 { margin: 0; font-size: 20px; letter-spacing: -.3px; }
+      .identity span { color: #68758a; font-size: 13px; }
+      nav { display: flex; align-items: center; gap: 10px; }
+      a.button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 40px;
+        padding: 0 17px;
+        border-radius: 9px;
+        text-decoration: none;
+        font-size: 14px;
+        font-weight: 600;
+        border: 1px solid #ced7e5;
+        background: #fff;
+        color: #28364d;
+      }
+      a.primary { color: #fff; background: #2563eb; border-color: #2563eb; }
+      main { padding: 22px clamp(10px, 3vw, 34px) 32px; }
+      .resume-shell {
+        width: min(1120px, 100%);
+        height: calc(100vh - 128px);
+        min-height: 680px;
+        margin: 0 auto;
+        overflow: hidden;
+        background: #fff;
+        border: 1px solid #dce3ed;
+        border-radius: 14px;
+        box-shadow: 0 20px 55px rgba(31, 48, 78, .12);
+      }
+      object { width: 100%; height: 100%; border: 0; }
+      .fallback { padding: 36px; text-align: center; color: #68758a; }
+      .fallback a { color: #2563eb; }
+      @media (max-width: 680px) {
+        header { align-items: flex-start; flex-direction: column; }
+        nav { width: 100%; }
+        a.button { flex: 1; }
+        main { padding-top: 12px; }
+        .resume-shell { height: calc(100vh - 156px); min-height: 560px; border-radius: 8px; }
+      }
+    </style>
   </head>
-  <body><div id="app"></div></body>
+  <body>
+    <header>
+      <div class="identity">
+        <h1>张峻豪</h1>
+        <span>Java 后端 · AI 应用开发</span>
+      </div>
+      <nav aria-label="主页操作">
+        <a class="button" href="/resume.pdf" download>下载简历</a>
+        <a class="button primary" href="/leadpilot/">查看 LeadPilot 项目</a>
+      </nav>
+    </header>
+    <main>
+      <section class="resume-shell" aria-label="张峻豪的简历">
+        <object data="/resume.pdf#view=FitH" type="application/pdf">
+          <div class="fallback">
+            当前浏览器无法直接显示 PDF，请<a href="/resume.pdf">打开或下载简历</a>。
+          </div>
+        </object>
+      </section>
+    </main>
+  </body>
 </html>
