@@ -28,7 +28,7 @@
       .identity { display: flex; flex-direction: column; gap: 4px; }
       h1 { margin: 0; font-size: 20px; letter-spacing: -.3px; }
       .identity span { color: #68758a; font-size: 13px; }
-      nav { display: flex; align-items: center; gap: 10px; }
+      nav { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
       a.button {
         display: inline-flex;
         align-items: center;
@@ -47,24 +47,27 @@
       main { padding: 22px clamp(10px, 3vw, 34px) 32px; }
       .resume-shell {
         width: min(1120px, 100%);
-        height: calc(100vh - 128px);
-        min-height: 680px;
         margin: 0 auto;
-        overflow: hidden;
-        background: #fff;
+        background: #e4eaf2;
         border: 1px solid #dce3ed;
         border-radius: 14px;
         box-shadow: 0 20px 55px rgba(31, 48, 78, .12);
+        padding: 14px;
       }
-      object { width: 100%; height: 100%; border: 0; }
-      .fallback { padding: 36px; text-align: center; color: #68758a; }
-      .fallback a { color: #2563eb; }
+      .reader-note { margin: 0 0 14px; color: #526078; font-size: 13px; text-align: center; line-height: 1.6; }
+      .reader-note a { color: #2563eb; }
+      figure { margin: 0 0 20px; }
+      figure:last-child { margin-bottom: 0; }
+      .resume-page { display: block; width: 100%; max-width: 900px; margin: 0 auto; color: #2563eb; }
+      .resume-page img { display: block; width: 100%; height: auto; background: #fff; box-shadow: 0 3px 14px rgba(31, 48, 78, .10); }
+      figcaption { margin-top: 9px; text-align: center; font-size: 12px; color: #68758a; }
       @media (max-width: 680px) {
         header { align-items: flex-start; flex-direction: column; }
         nav { width: 100%; }
-        a.button { flex: 1; }
+        a.button { flex: 1 1 100px; padding: 0 10px; }
         main { padding-top: 12px; }
-        .resume-shell { height: calc(100vh - 156px); min-height: 560px; border-radius: 8px; }
+        .resume-shell { border-radius: 8px; padding: 6px; }
+        .reader-note { padding: 4px 6px; }
       }
     </style>
   </head>
@@ -75,17 +78,26 @@
         <span>Java 后端 · AI 应用开发</span>
       </div>
       <nav aria-label="主页操作">
-        <a class="button" href="/resume.pdf?v=20261009" download>下载简历</a>
+        <a class="button" href="/resume.pdf?v=7e0385ed3cc0" target="_blank" rel="noopener">打开 PDF</a>
+        <a class="button" href="/resume.pdf?v=7e0385ed3cc0" download="张峻豪-Java后端-AI应用开发.pdf">下载简历</a>
         <a class="button primary" href="/leadpilot/">查看 LeadPilot 项目</a>
       </nav>
     </header>
     <main>
       <section class="resume-shell" aria-label="张峻豪的简历">
-        <object data="/resume.pdf?v=20261009#view=FitH" type="application/pdf">
-          <div class="fallback">
-            当前浏览器无法直接显示 PDF，请<a href="/resume.pdf?v=20261009">打开或下载简历</a>。
-          </div>
-        </object>
+        <p class="reader-note">共 2 页，向下滚动可查看完整简历。点击页面可打开高清图；<a href="/resume.pdf?v=7e0385ed3cc0" target="_blank" rel="noopener">原版 PDF</a> 支持文字选择和下载。</p>
+        <figure>
+          <a class="resume-page" href="/resume-pages/resume-7e0385ed3cc0-page-1.jpg" target="_blank" rel="noopener" aria-label="打开简历第 1 页高清图">
+            <img src="/resume-pages/resume-7e0385ed3cc0-page-1.jpg" width="1786" height="2526" alt="张峻豪的 Java 后端与 AI 应用开发简历，第 1 页，共 2 页" fetchpriority="high" />
+          </a>
+          <figcaption>第 1 页 / 共 2 页</figcaption>
+        </figure>
+        <figure>
+          <a class="resume-page" href="/resume-pages/resume-7e0385ed3cc0-page-2.jpg" target="_blank" rel="noopener" aria-label="打开简历第 2 页高清图">
+            <img src="/resume-pages/resume-7e0385ed3cc0-page-2.jpg" width="1786" height="2526" alt="张峻豪的 Java 后端与 AI 应用开发简历，第 2 页，共 2 页" loading="lazy" decoding="async" />
+          </a>
+          <figcaption>第 2 页 / 共 2 页</figcaption>
+        </figure>
       </section>
     </main>
   </body>
